@@ -38,10 +38,10 @@ npm test
 ## Container (Docker)
 ```bash
 docker build -t service-ui .
-docker run --rm -p 8081:8081 \
+docker run --rm -p 8080:8080 \
   --add-host=host.docker.internal:host-gateway \
   service-ui
-# open http://localhost:8081
+# open http://localhost:8080
 ```
 
 ## Build pipeline
@@ -50,16 +50,16 @@ docker run --rm -p 8081:8081 \
 Pull and run:
 ```bash
 docker pull ghcr.io/truongngh/service-ui:main
-docker run --rm -p 8081:8081 --add-host=host.docker.internal:host-gateway \
+docker run --rm -p 8080:8080 --add-host=host.docker.internal:host-gateway \
   ghcr.io/truongngh/service-ui:main
-# open http://localhost:8081
+# open http://localhost:8080
 ```
 
 ## Environment
 | Var | Default | Purpose |
 |---|---|---|
-| `PORT` | `8081` | UI listen port |
-| `GATEWAY_BASE_URL` | `http://host.docker.internal:8080` | service-gateway |
+| `PORT` | `8080` | UI listen port |
+| `GATEWAY_BASE_URL` | `http://host.docker.internal:8081` | service-gateway |
 | `DEFAULT_MODEL` | `qwen3.8:27b` | pre-selected model |
 
 > `host.docker.internal` reaches the host on macOS Docker Desktop. On Linux,

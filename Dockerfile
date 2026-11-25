@@ -7,11 +7,11 @@ RUN npm ci --omit=dev            # requires a committed package-lock.json
 
 FROM node:22-alpine
 WORKDIR /app
-ENV NODE_ENV=production PORT=8081
+ENV NODE_ENV=production PORT=8080
 COPY --from=build /app/node_modules ./node_modules
 COPY package*.json ./
 COPY src ./src
 COPY public ./public
-EXPOSE 8081
+EXPOSE 8080
 USER node
 CMD ["node", "src/server.js"]

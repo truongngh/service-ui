@@ -4,8 +4,8 @@ import { randomBytes } from 'node:crypto';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const PORT = process.env.PORT || 8081;
-const GATEWAY = process.env.GATEWAY_BASE_URL || 'http://host.docker.internal:8080';
+const PORT = process.env.PORT || 8080;
+const GATEWAY = process.env.GATEWAY_BASE_URL || 'http://host.docker.internal:8081';
 const DEFAULT_MODEL = process.env.DEFAULT_MODEL || 'qwen3.8:27b';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
