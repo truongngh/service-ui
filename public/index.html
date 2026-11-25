@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>service-ui</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>service-ui</h1>
+    <div class="controls">
+      <select id="model" title="Model"></select>
+      <button id="new-chat" title="Clear this conversation">New chat</button>
+      <span id="status" class="pill">&hellip;</span>
+    </div>
+  </header>
+
+  <main id="transcript" aria-live="polite"></main>
+
+  <footer>
+    <form id="chat-form">
+      <input id="input" placeholder="Type a message&hellip;" autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

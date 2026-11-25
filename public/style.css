@@ -1,0 +1,101 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --border: #232833;
+  --text: #e6e8ee;
+  --muted: #8a91a0;
+  --field: #11141b;
+  --field-border: #2a303c;
+  --user: #2563eb;
+  --assistant: #2a2f3a;
+  --ok: #22c55e;
+  --err: #ef4444;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+header h1 { font-size: 1.05rem; margin: 0; font-weight: 600; }
+.controls { display: flex; align-items: center; gap: 0.6rem; }
+
+select, button, input {
+  font: inherit;
+  color: var(--text);
+  background: var(--field);
+  border: 1px solid var(--field-border);
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+}
+button { cursor: pointer; }
+button:hover, select:hover { border-color: #3b4252; }
+button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid #4c8dff;
+  outline-offset: 1px;
+}
+
+.pill {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.pill.ok { background: rgba(34, 197, 94, 0.15); color: var(--ok); }
+.pill.err { background: rgba(239, 68, 68, 0.15); color: var(--err); }
+
+main#transcript {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 0.6rem 0.85rem;
+  border-radius: 14px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.bubble.user {
+  align-self: flex-end;
+  background: var(--user);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+.bubble.assistant {
+  align-self: flex-start;
+  background: var(--assistant);
+  border-bottom-left-radius: 4px;
+}
+
+footer {
+  padding: 0.85rem 1rem;
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+}
+#chat-form { display: flex; gap: 0.6rem; }
+#input { flex: 1; }
